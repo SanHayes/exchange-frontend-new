@@ -38,7 +38,7 @@ module.exports = {
     },
     proxy: {
       "/api": {
-        target: "http://43.155.165.51/",
+        target: "http://www.ceshi01.vip/",
         pathRewrite: { "^/api": "" }, //路径改写
       },
     },
