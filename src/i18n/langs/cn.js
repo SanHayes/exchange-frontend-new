@@ -3,6 +3,7 @@ export default {
     Account: "帳戶",
     Password: "密碼",
     Login: "登录",
+    Logout: "登出",
   },
   common: {
     cancel: "取消",
@@ -17,6 +18,11 @@ export default {
     success: "成功",
     failed: "失败",
     See: "查看",
+    PageStyleSetting: "頁面樣式設定",
+    ThemeColor: "主題顏色",
+    OpenTagsView: "打開標籤視圖",
+    FixedHeader: "固定標題",
+    SidebarLogo: "側欄徽標",
   },
   Index: {
     all: "全部",
@@ -63,6 +69,7 @@ export default {
     DictConfig: "字典配置",
     Agent: "代理商",
     Statistics: "統計",
+    Profile: "个人信息",
   },
   User: {
     Email: "邮箱",
@@ -93,6 +100,10 @@ export default {
     profit: "利潤",
     TotalCharge: "总存款",
     TotalWithdrawal: "总提现",
+    IdFront: "身份證正面",
+    Id_back: "身份證背面",
+    Verified: "實名認證",
+    Logo: "用戶頭像",
   },
   history: {
     TotalDeposit: "總存款",
@@ -180,13 +191,13 @@ export default {
   Bet: {
     p1: "系統正在卸載，因為在有價值的會話和即將卸載期間（可能關閉）。",
     p2: "如果{value}BOT將觸發斷橋，直到空隙結束。",
-    p3: "如果買入或賣出大於｛value｝將觸發折開",
+    p3: "如果買入或賣出大於{value}將觸發折開",
     p4: "如果現時的情况下賺錢",
     p5: "注意",
     p6: "當前會話為負值，將自動啟動卸載，使以下會話的負值用完（自動關閉/打開）",
     p7: "銅",
     p8: "功能",
-    p9: "關閉信用卡",
+    p9: "关闭声音开关",
     p10: "總玩家下注",
     p11: "總行銷賭注",
     p12: "出售",
@@ -202,6 +213,8 @@ export default {
     p22: "玩家",
     p23: "玩家購買",
     p24: "玩家投注賣出",
+    p25: "打开",
+    p26: "关闭",
   },
   Success: {
     e1: "更改為",

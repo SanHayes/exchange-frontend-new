@@ -1,6 +1,6 @@
 <template>
   <div class="edit-bet-wrapper">
-    <el-row :gutter="30">
+    <el-row :gutter="100">
       <el-col :span="12">
         <p>
           {{ $t("Bet.p15") }}:
@@ -27,46 +27,47 @@
         <el-button @click="reloadAmTien" type="danger">
           {{ $t("Bet.p9") }}
         </el-button>
-        <br />
-        <b>
+        <div class="notice">
           {{ $t("Bet.p1") }}
-        </b>
+        </div>
         <div>
-          <b>
-            {{
-              $t("Bet.p2", {
-                value: AMOUNTBECAU_MIN,
-              })
-            }}
-          </b>
-          <div>
+          {{
+            $t("Bet.p2", {
+              value: AMOUNTBECAU_MIN,
+            })
+          }}
+        </div>
+        <el-row>
+          <el-col :span="6">
             <el-input type="number" v-model="AMOUNTBECAU_MIN" />
-          </div>
-          <div>
+          </el-col>
+          <el-col :span="4">
             <el-button @click="sbAmountBeCauMin" type="success">
               {{ $t("Setting.Agree") }}
             </el-button>
-          </div>
-          <b>
-            {{
-              $t("Bet.p3", {
-                value: AMOUNTBECAU_MAX,
-              })
-            }}
-          </b>
-          <div>
-            <el-input type="number" color="success" v-model="AMOUNTBECAU_MAX" />
-          </div>
-          <div>
+          </el-col>
+        </el-row>
+        <div>
+          {{
+            $t("Bet.p3", {
+              value: AMOUNTBECAU_MAX,
+            })
+          }}
+        </div>
+        <el-row>
+          <el-col :span="6">
+            <el-input type="number" v-model="AMOUNTBECAU_MAX" />
+          </el-col>
+          <el-col :span="4">
             <el-button @click="sbAmountBeCauMax" type="success">
               {{ $t("Setting.Agree") }}
             </el-button>
-          </div>
-        </div>
+          </el-col>
+        </el-row>
       </el-col>
       <el-col :span="12">
         <p>{{ $t("Bet.p8") }}:</p>
-        <p>
+        <p class="notice">
           <span>( {{ $t("Bet.p4") }} )</span>
           <b> {{ $t("Bet.p5") }}: </b>
           {{ $t("Bet.p6") }}
@@ -90,7 +91,7 @@
               {{ $t("Setting.TurnOff") }}
             </el-radio>
             <br />
-            <span>
+            <span class="notice">
               <b> {{ $t("Bet.p5") }}: </b>
               {{ $t("Bet.p18") }} <br />
               {{ $t("Bet.p19") }}
@@ -99,17 +100,21 @@
         </ul>
       </el-col>
     </el-row>
-    <el-row :gutter="30">
+    <el-row :gutter="100">
       <el-col :span="12">
         <p>{{ $t("history.Marketing") }}</p>
-        <p>
-          {{ $t("Bet.p20") }}: <span>$ {{ price_buy_mkt }} </span><br />
-          {{ $t("Bet.p21") }}:
-          <el-link type="danger">$ {{ price_sell_mkt }}</el-link>
-        </p>
+        <el-row>
+          <el-col :span="12">
+            {{ $t("Bet.p20") }}: <span>$ {{ price_buy_mkt }} </span>
+          </el-col>
+          <el-col :span="12">
+            {{ $t("Bet.p21") }}:
+            <el-link type="danger">$ {{ price_sell_mkt }}</el-link>
+          </el-col>
+        </el-row>
         <table class="tbv">
           <tr>
-            <th>{{ $t("User.Email") }}</th>
+            <th>{{ $t("Login.Account") }}</th>
             <th>{{ $t("history.type") }}</th>
             <th>{{ $t("history.Purchase") }}/{{ $t("history.Sale") }}</th>
             <th>{{ $t("history.TzAccount") }}</th>
@@ -122,10 +127,14 @@
               </td>
               <td>
                 <p v-if="tr.bet == 'buy'">
-                  <el-link type="success">{{ $t("history.Purchase") }}</el-link>
+                  <el-link type="success">
+                    {{ $t("history.Purchase") }}
+                  </el-link>
                 </p>
                 <p v-else>
-                  <el-link type="danger">{{ $t("history.Sale") }}</el-link>
+                  <el-link type="danger">
+                    {{ $t("history.Sale") }}
+                  </el-link>
                 </p>
               </td>
               <td>
@@ -141,15 +150,19 @@
       </el-col>
       <el-col :span="12">
         <p>{{ $t("Bet.p22") }}</p>
-        <p>
-          {{ $t("Bet.p23") }}: <span>$ {{ price_play_buy }}</span>
-          <br />
-          {{ $t("Bet.p24") }}:
-          <el-link type="danger">$ {{ price_play_sell }}</el-link>
-        </p>
+        <el-row>
+          <el-col :span="12">
+            {{ $t("Bet.p23") }}:
+            <span>$ {{ price_play_buy }}</span>
+          </el-col>
+          <el-col :span="12">
+            {{ $t("Bet.p24") }}:
+            <el-link type="danger">$ {{ price_play_sell }}</el-link>
+          </el-col>
+        </el-row>
         <table class="tbv">
           <tr>
-            <th>{{ $t("User.Email") }}</th>
+            <th>{{ $t("Login.Account") }}</th>
             <th>{{ $t("history.type") }}</th>
             <th>{{ $t("history.Purchase") }}/{{ $t("history.Sale") }}</th>
             <th>{{ $t("history.TzAccount") }}</th>
@@ -202,7 +215,7 @@ export default {
       isMounted: false,
 
       countDown: 0,
-      typeOder: "Mở",
+      typeOder: this.$t("Bet.p25"),
 
       price_buy: 0,
       price_sell: 0,
@@ -409,7 +422,8 @@ export default {
 
       if (data.type === "allData") {
         _this.countDown = dl.candleClose;
-        _this.typeOder = dl.type == "order" ? "Mở" : "Đóng";
+        _this.typeOder =
+          dl.type == "order" ? this.$t("Bet.p25") : this.$t("Bet.p26");
 
         // reset lại số tiền = 0 khi thời gian = 0;
         if (dl.candleClose == 0) {
@@ -458,18 +472,20 @@ export default {
 
 <style lang="scss">
 .edit-bet-wrapper {
-  padding: 10px;
+  padding: 30px;
   background: #fff;
   line-height: 2;
   margin: 0 10px;
-  .el-input {
-    margin: 10px 0;
-  }
+  font-size: 14px;
   p {
     margin: 10px 0;
   }
-  ul li {
+
+  ul,
+  li {
     list-style: none;
+    padding: 0;
+    margin: 0;
   }
 }
 </style>
@@ -479,16 +495,22 @@ export default {
   border-collapse: collapse;
   width: 100%;
   color: #000;
+  text-align: center;
+}
+.tbv th {
+  color: #fff;
 }
 
 .tbv tr {
   background-color: #ffa11f;
 }
-
+.notice {
+  font-size: 12px;
+  color: #999;
+}
 .tbv td,
 .tbv th {
   border: 1px solid #dddddd;
-  text-align: left;
   padding: 8px;
 }
 

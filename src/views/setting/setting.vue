@@ -37,14 +37,6 @@
             >
               {{ $t("Setting.Wallet") }} USDT
             </el-checkbox>
-            <div class="absolute" style="top: 5px; right: 0">
-              <IconCrypto
-                style="width: 20px"
-                coinname="USDT"
-                color="color"
-                format="svg"
-              />
-            </div>
             <div style="position: relative">
               <el-checkbox
                 v-model="settingJson.show_wallet_vnd"

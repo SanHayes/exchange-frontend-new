@@ -8,11 +8,6 @@ import Layout from "@/layout";
 
 export const constantRoutes = [
   {
-    path: "/",
-    component: Layout,
-    redirect: "/dashboard",
-  },
-  {
     path: "/redirect",
     component: Layout,
     hidden: true,
@@ -37,8 +32,8 @@ export const constantRoutes = [
       {
         path: "index",
         component: () => import("@/views/profile/index"),
-        name: "个人信息",
-        meta: { title: "个人信息", icon: "user", noCache: true },
+        name: "Profile",
+        meta: { title: "Profile", icon: "user", noCache: true },
       },
     ],
   },

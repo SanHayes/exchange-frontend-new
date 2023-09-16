@@ -3,6 +3,7 @@ export default {
     Account: "Tài khoản",
     Password: "Mật khẩu",
     Login: "Đăng nhập",
+    Logout: "Đăng xuất",
   },
   common: {
     cancel: "Hủy bỏ",
@@ -17,6 +18,11 @@ export default {
     success: "Thành công",
     failed: "Không thành công",
     See: "Xem",
+    PageStyleSetting: "Thiết lập kiểu trang",
+    ThemeColor: "Màu sắc chủ đề",
+    OpenTagsView: "Mở ô xem thẻ",
+    FixedHeader: "Tiêu đề cố định",
+    SidebarLogo: "Logo thanh bên",
   },
   Index: {
     all: "Tất cả",
@@ -63,6 +69,7 @@ export default {
     DictConfig: "Cấu hình từ điển",
     Agent: "Đại lý",
     Statistics: "Thống kê",
+    Profile: "Thông tin cá nhân",
   },
   User: {
     Email: "Email",
@@ -93,6 +100,10 @@ export default {
     profit: "Lợi nhuận",
     TotalCharge: "Tổng nạp",
     TotalWithdrawal: "Tổng rút",
+    IdFront: "CMND mặt trước",
+    Id_back: "CMND mặt sau",
+    Verified: "Đã xác minh",
+    Logo: "Avatar người dùng",
   },
   history: {
     TotalDeposit: "Tổng tiền nạp",
@@ -199,6 +210,8 @@ export default {
     p22: "Người chơi",
     p23: "Người chơi Cược BUY",
     p24: "Người chơi Cược SELL",
+    p25: "Mở",
+    p26: "Đóng",
   },
   Success: {
     e1: "Đã thay đổi thành ",

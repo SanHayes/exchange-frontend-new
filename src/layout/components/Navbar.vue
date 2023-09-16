@@ -34,10 +34,10 @@
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link to="/profile/index">
-            <el-dropdown-item>个人信息</el-dropdown-item>
+            <el-dropdown-item>{{ $t("Menu.Profile") }} </el-dropdown-item>
           </router-link>
           <el-dropdown-item divided @click.native="logout">
-            <span style="display: block">登出</span>
+            <span style="display: block">{{ $t("Login.Logout") }}</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>

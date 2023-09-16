@@ -4,7 +4,7 @@
       <el-form label-width="80px">
         <el-row :gutter="10">
           <el-col :span="4">
-            <el-form-item label-width="40px" :label="$t('User.Email')">
+            <el-form-item label-width="80px" :label="$t('Login.Account')">
               <el-input v-model="queryParam.email" />
             </el-form-item>
           </el-col>
@@ -40,8 +40,8 @@
     >
       <el-table-column
         prop="email"
-        width="180px"
-        :label="$t('User.Email')"
+        width="100px"
+        :label="$t('Login.Account')"
         align="center"
       />
       <el-table-column
@@ -99,7 +99,7 @@
         align="center"
       >
       </el-table-column>
-      <el-table-column width="200px" :label="$t('User.Wallet')" align="center">
+      <el-table-column :label="$t('User.Wallet')" align="center">
         <template slot-scope="record">
           <div class="tb-wallet">
             <div>
@@ -143,6 +143,43 @@
             :active-value="1"
             :inactive-value="2"
             @change="disOrEnableRecord(record.row)"
+          />
+        </template>
+      </el-table-column>
+      <el-table-column :label="$t('User.IdFront')" align="center">
+        <template slot-scope="record">
+          <el-image
+            style="width: 80px; height: 50px"
+            fit="contain"
+            :src="record.row.id_front || imgLinkDef"
+            :preview-src-list="[record.row.id_front || imgLinkDef]"
+          >
+          </el-image>
+        </template>
+      </el-table-column>
+      <el-table-column :label="$t('User.Id_back')" align="center">
+        <template slot-scope="record">
+          <el-image
+            fit="contain"
+            style="width: 80px; height: 50px"
+            :src="record.row.id_back || imgLinkDef"
+            :preview-src-list="[record.row.id_back || imgLinkDef]"
+          >
+          </el-image>
+        </template>
+      </el-table-column>
+      <el-table-column
+        prop="active"
+        width="120px"
+        :label="$t('User.Verified')"
+        align="center"
+      >
+        <template slot-scope="record">
+          <el-switch
+            v-model="record.row.verified"
+            :active-value="1"
+            :inactive-value="2"
+            @change="disOrVerifiedRecord(record.row)"
           />
         </template>
       </el-table-column>
@@ -304,6 +341,7 @@ export default {
       editor: null,
       formName: "domain_record",
       defaultQueryParam: ["vip_user"],
+      imgLinkDef: require("@/assets/images/sfp.png"),
       queryParam: {
         active: "",
         email: "",
@@ -365,6 +403,15 @@ export default {
       this.$http
         .put(this.url + "/" + record.id, {
           active: record.active,
+        })
+        .then((response) => {
+          this.$message.success(response.message);
+        });
+    },
+    disOrVerifiedRecord(record) {
+      this.$http
+        .put(this.url + "/" + record.id, {
+          verified: record.verified,
         })
         .then((response) => {
           this.$message.success(response.message);

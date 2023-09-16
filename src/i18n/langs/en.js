@@ -3,6 +3,7 @@ export default {
     Account: "Account",
     Password: "Password",
     Login: "Login",
+    Logout: "Logout",
   },
   common: {
     cancel: "Cancel",
@@ -17,6 +18,11 @@ export default {
     success: "Success",
     failed: "Failed",
     See: "View",
+    PageStyleSetting: "Page style setting",
+    ThemeColor: "Theme Color",
+    OpenTagsView: "Open Tag View",
+    FixedHeader: "Fixed Title",
+    SidebarLogo: "Sidebar logo",
   },
   Index: {
     all: "all",
@@ -36,6 +42,8 @@ export default {
     TotalAccout: "Total volume wins",
     TotalTradingPlatform: "Total Trading Platform",
     TotalTransactionCommission: "Total Transaction Commission",
+    TotalUserRevenue: "Total User Revenue",
+    AddUser: "New User",
   },
   Menu: {
     Dashboard: "Dashboard",
@@ -61,6 +69,7 @@ export default {
     DictConfig: "Dictionary Configuration",
     Agent: "Agent",
     Statistics: "Statistics",
+    Profile: "Personal Information",
   },
   User: {
     Email: "Email",
@@ -91,6 +100,10 @@ export default {
     profit: "Profit",
     TotalCharge: "Total Deposit",
     TotalWithdrawal: "Total Withdrawal",
+    IdFront: "Front ID card",
+    Id_back: "ID card back",
+    Verified: "Verified",
+    Logo: "Avatar Users",
   },
   history: {
     TotalDeposit: "Total Deposit",
@@ -190,8 +203,6 @@ export default {
     p13: "Purchase",
     p14: "Bet Status",
     p15: "Remaining time",
-    p16: "Buy",
-    p17: "Sell",
     p18: "If you choose to buy or sell, at the end of the trading session, you will jump back to buy or sell on the chart",
     p19: "(Turn off if you want default results, turn off automatic system if you want money )",
     p20: "Marketing Purchase",
@@ -199,6 +210,8 @@ export default {
     p22: "Player",
     p23: "Player Purchase",
     p24: "Player Bet Sell",
+    P25: "Open",
+    P26: "Close",
   },
   Success: {
     e1: "Changed to ",
